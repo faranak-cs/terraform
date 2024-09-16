@@ -1,3 +1,4 @@
+# TERRAFORM BLOCK
 terraform {
     required_providers {
         docker = {
@@ -7,13 +8,16 @@ terraform {
     }
 }
 
+# PROVIDER BLOCK
 provider "docker" {}
 
+# RESOURCE BLOCK "RESOURCE_TYPE" "RESOURCE_NAME"
 resource "docker_image" "nginx" {
     name = "nginx"
     keep_locally = false
 }
 
+# RESOURCE BLOCK "RESOURCE_TYPE" "RESOURCE_NAME"
 resource "docker_container" "nginx" {
     image = docker_image.nginx.image_id
     name = "demo"
