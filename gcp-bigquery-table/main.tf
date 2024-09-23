@@ -1,18 +1,17 @@
-# TERRAFORM BLOCK
 terraform {
+  required_version = ">= 0.14"
   required_providers {
     google = {
-        source = "hashicorp/google"
-        version = "4.51.0"
+      source  = "hashicorp/google"
+      version = ">= 4.42.0"
     }
+  }
+   backend "gcs" {
+    bucket  = "BUCKET-NAME"
+    prefix  = "BUCKET-SUB-NAME"
   }
 }
 
-# RESOURCE BLOCK "RESOURCE_TYPE" "RESOURCE_NAME"
-resource "google_bigquery_table_iam_member" "member" {
-  project = google_bigquery_table.test.project
-  dataset_id = google_bigquery_table.test.dataset_id
-  table_id = google_bigquery_table.test.table_id
-  role = "roles/bigquery.dataOwner"
-  member = "user:jane@example.com"
+provider "google" {
+  project     = "PROJECT-ID"
 }
