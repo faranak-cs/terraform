@@ -1,5 +1,5 @@
 # Terraform templates
-.tf files
+Have you ever wanted to know exactly what was deployed to the cloud? Have developed a whole environment in the console and then promptly forgot everything you did to get it setup in the first place and could never recreate it exactly as you did before? Enter Terraform. Using a tool like terraform you get to declare and build your infrastructure against a well documented api in a fast feedback loop environment.
 ## Steps
 - Scope
 - Author
